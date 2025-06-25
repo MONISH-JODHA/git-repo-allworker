@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bootcamp
+  labels:
+    app: bootcamp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: bootcamp
+  template:
+    metadata:
+      name: bootcamp
+      labels:
+        app: bootcamp
+    spec:
+      containers:
+        - name: bootcamp
+          envFrom:
+            - configMapRef:
+                name: port
+          image: 739275440059.dkr.ecr.us-east-1.amazonaws.com/mj:latest
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
