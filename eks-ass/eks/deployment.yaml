@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: getting-started-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: getting-started-app
+  template:
+    metadata:
+      labels:
+        app: getting-started-app
+    spec:
+      containers:
+        - name: getting-started-app
+          image: 739275440059.dkr.ecr.us-east-1.amazonaws.com/mjrepo:latest
+          ports:
+            - containerPort: 3000
+          volumeMounts:
+            - name: ebs-storage
+              mountPath: /etc/todos/
+      
+      volumes:
+        - name: ebs-storage
+          persistentVolumeClaim:
+            claimName: getting-started-app-pvc
