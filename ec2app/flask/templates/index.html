@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User List</title>
+</head>
+<body>
+  <h1>User List</h1>
+  <ul id="user-list"></ul>
+
+  <script>
+    async function fetchUsers() {
+      const res = await fetch('/api/users');
+      const users = await res.json();
+
+      const list = document.getElementById('user-list');
+      list.innerHTML = '';
+      users.forEach(user => {
+        const li = document.createElement('li');
+        li.textContent = `${user.name} - ${user.email}`;
+        list.appendChild(li);
+      });
+    }
+
+    // Fetch initially and then every 5 seconds
+    fetchUsers();
+    setInterval(fetchUsers, 2000);
+  </script>
+</body>
+</html>

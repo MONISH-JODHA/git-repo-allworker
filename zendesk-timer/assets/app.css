@@ -1,0 +1,15 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    padding: 10px;
+  }
+  
+  #groupTimeSummary {
+    margin-top: 10px;
+  }
+  
+  ul {
+    padding-left: 20px;
+    margin-top: 5px;
+  }
+  

@@ -1,0 +1,160 @@
+/* static/css/style.css */
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    background-color: #f8f9fa; /* A light grey background */
+    color: #212529; /* Bootstrap's default text color */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure body takes full viewport height */
+}
+
+.container {
+    flex: 1; /* Allows the main content to grow and push footer down */
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+/* --- Navbar --- */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+.navbar-brand {
+    font-weight: 500;
+    font-size: 1.4rem;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255,255,255,.8);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: #fff;
+}
+
+.navbar-text {
+    color: rgba(255,255,255,.85);
+}
+
+
+/* --- Jumbotron (used on index.html) --- */
+.jumbotron {
+    background-color: #e9ecef;
+    border-radius: .3rem;
+    padding: 2rem 2rem;
+}
+@media (min-width: 576px) {
+    .jumbotron {
+        padding: 4rem 2rem;
+    }
+}
+
+/* --- Cards --- */
+.card {
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(0,0,0,.125);
+    box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,.05);
+}
+
+.card-header {
+    background-color: #007bff; /* Primary blue */
+    color: white;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+.card-header h1, .card-header h2, .card-header h3, .card-header h4, .card-header h5 {
+    margin-bottom: 0;
+    font-size: 1.25rem;
+}
+
+/* --- Forms --- */
+.form-control-label {
+    font-weight: 500; /* Slightly bolder labels */
+}
+
+.form-control-lg {
+    /* Bootstrap's .form-control-lg might be too large for some tastes */
+    /* font-size: 1rem; */
+    /* padding: .5rem 1rem; */
+}
+
+/* --- Buttons --- */
+.btn {
+    border-radius: .25rem;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.btn-primary:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+/* Add hover states for other buttons if needed */
+
+/* --- Alerts --- */
+.alert {
+    border-radius: .25rem;
+    padding: .75rem 1.25rem;
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: #343a40; /* Dark background */
+    color: rgba(255,255,255,.6);
+    padding: 1.5rem 0;
+    text-align: center;
+    margin-top: auto; /* This is key for sticky footer with flexbox */
+    font-size: 0.9rem;
+}
+
+.footer a {
+    color: rgba(255,255,255,.75);
+}
+
+.footer a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* --- List Groups (for announcements, courses) --- */
+.list-group-item {
+    border-color: rgba(0,0,0,.1);
+}
+.list-group-item-action:hover, .list-group-item-action:focus {
+    background-color: #f0f8ff; /* AliceBlue, a very light blue */
+    color: #0056b3;
+}
+
+/* Specific Dashboard Card Styling */
+.dashboard-card .card-header {
+    background-color: #17a2b8; /* Bootstrap info color */
+}
+
+.dashboard-card .card-body a.btn {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+/* Table styling */
+.table th {
+    font-weight: 500;
+}
+.table-hover tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Small text utility */
+.text-small {
+    font-size: 0.875em;
+}
+
+/* Margins and Paddings */
+.mt-4 { margin-top: 1.5rem !important; }
+.mb-4 { margin-bottom: 1.5rem !important; }
+.mt-5 { margin-top: 3rem !important; }
+.mb-5 { margin-bottom: 3rem !important; }

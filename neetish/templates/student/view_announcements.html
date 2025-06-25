@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>{{ title }}</h2>
+    {% if announcements %}
+    <div class="list-group">
+        {% for announcement in announcements %}
+            <div class="list-group-item list-group-item-action flex-column align-items-start mb-2">
+                <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{ announcement.title }}</h5>
+                <small>{{ announcement.timestamp.strftime('%Y-%m-%d %H:%M') }}</small>
+                </div>
+                <p class="mb-1">{{ announcement.content | safe }}</p> {# Use |safe if content contains HTML, otherwise sanitize #}
+                <small>By: {{ announcement.author.username }}</small>
+            </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p>No announcements available at the moment.</p>
+    {% endif %}
+{% endblock %}

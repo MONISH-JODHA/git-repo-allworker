@@ -1,0 +1,7 @@
+{
+  "app": {
+    "name": "Group Timer on Resolve",
+    "short_description": "Displays time spent in each group before ticket resolution",
+    "long_description": "This app tracks the amount of time a Zendesk ticket spent in each group before it was resolved, displaying it in the sidebar."
+  }
+}

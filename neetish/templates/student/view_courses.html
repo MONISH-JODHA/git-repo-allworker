@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>{{ title }}</h2>
+    {% if courses %}
+    <div class="list-group">
+        {% for course in courses %}
+            <a href="#" class="list-group-item list-group-item-action"> <!-- Link to course detail page in future -->
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">{{ course.code }} - {{ course.title }}</h5>
+                    {% if course.faculty_instructor %}
+                        <small>Instructor: {{ course.faculty_instructor.username }}</small>
+                    {% endif %}
+                </div>
+                <p class="mb-1">{{ course.description|truncate(100, True) if course.description else 'No description available.' }}</p>
+                <!-- Add enrollment button/status here later -->
+            </a>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p>No courses are currently listed.</p>
+    {% endif %}
+{% endblock %}

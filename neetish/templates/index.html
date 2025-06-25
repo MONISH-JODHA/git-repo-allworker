@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome to the College Portal!</h1>
+        <p class="lead">Your one-stop destination for all college-related information and activities.</p>
+        <hr class="my-4">
+        {% if not current_user.is_authenticated %}
+            <p>Please log in to access your dashboard and other features.</p>
+            <a class="btn btn-primary btn-lg" href="{{ url_for('login') }}" role="button">Login</a>
+        {% else %}
+            <p>You are logged in. Go to your <a href="{{url_for('dashboard')}}">Dashboard</a>.</p>
+        {% endif %}
+    </div>
+
+    {% if announcements %}
+    <h2>Latest Announcements</h2>
+    <div class="list-group">
+        {% for announcement in announcements %}
+            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{ announcement.title }}</h5>
+                <small>{{ announcement.timestamp.strftime('%Y-%m-%d %H:%M') }}</small>
+                </div>
+                <p class="mb-1">{{ announcement.content[:150] }}{% if announcement.content|length > 150 %}...{% endif %}</p>
+                <small>By: {{ announcement.author.username }}</small>
+            </a>
+        {% endfor %}
+    </div>
+    {% endif %}
+{% endblock %}
